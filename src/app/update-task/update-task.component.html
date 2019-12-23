@@ -1,0 +1,39 @@
+<h3>Update Task</h3>
+<div [hidden]="!submitted">
+  <h4>Task updated successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+<div style="width: 400px;" *ngIf="task">
+  <form >
+    <div class="form-group">
+      <label for="name">Task</label>
+      <input type="text" class="form-control" id="taskName" required [(ngModel)]="task.taskName" name="taskName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Priority</label>
+      <input type="range" class="form-control" id="priority" min="0" max="30" value="task.priority" required [(ngModel)]="task.priority" name="priority" oninput="priorityOutput.value = priority.value">
+      <output name="priorityOutput" id="priorityOutput">{{task.priority}}</output>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Parent Task</label>
+      <input type="text" class="form-control" id="parentTaskName" [(ngModel)]="task.parentTask.parentTaskName" name="parentTaskName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Start Date</label>
+      <input type="date" class="form-control" id="startDt" [(ngModel)]="task.startDate" name="startDt">
+    </div>
+
+    <div class="form-group">
+      <label for="name">End Date</label>
+      <input type="date" class="form-control" id="endDt" required [(ngModel)]="task.endDate" name="endDt">
+    </div>
+
+    <button type="button" class="btn btn-info mr-2" (click)= "updateTask()">Update Task</button>
+    <button type="button" class="btn btn-info btn-space" (click) = "reset()">Reset</button>
+
+  </form>
+</div>
+

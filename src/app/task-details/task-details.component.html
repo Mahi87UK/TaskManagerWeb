@@ -1,0 +1,20 @@
+<h2>Task Details</h2>
+
+<hr/>
+<div *ngIf="task">
+  <div>
+    <label><b>Task Name: </b></label> {{task.taskName}}
+  </div>
+  <div>
+    <label><b>Parent Task: </b></label> {{task.parentTask.parentTaskName}}
+  </div>
+  <div>
+    <label><b>Priority: </b></label> {{task.priority}}
+  </div>
+  <div>
+    <label><b>Start Date: </b></label> {{task.startDate}}
+  </div>
+  <div>
+    <label><b>End Date: </b></label> {{task.endDate}}
+  </div>
+</div>
